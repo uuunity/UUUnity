@@ -2,14 +2,24 @@
   "name": "uuunity",
   "version": "1.0.0",
   "description": "The Uuunity website.",
-  "main": "index.js",
   "repository": "https://github.com/goro19980502/UUUnity",
   "author": "Tzu-Yin Hong",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "next ./src",
+    "build": "next build ./src",
+    "start": "next start ./src"
+  },
   "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "less": "^3.9.0",
+    "lodash": "^4.17.11",
     "next": "^8.0.3",
+    "next-i18next": "^0.36.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "styled-icons": "^7.4.2"
   }
 }
