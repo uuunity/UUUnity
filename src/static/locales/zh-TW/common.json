@@ -1,6 +1,7 @@
 {
-  "app_title": "Uuunity",
+  "app_title": "UUUnity",
   "title_home": "首頁",
   "title_article_list": "文章列表",
-  "title_about_us": "關於我們"
+  "title_about_us": "關於我們",
+  "search_placeholder": "搜尋"
 }

@@ -1,6 +1,7 @@
 {
-  "app_title": "Uuunity",
+  "app_title": "UUUnity",
   "title_home": "Home",
   "title_article_list": "Articles",
-  "title_about_us": "About us"
+  "title_about_us": "About us",
+  "search_placeholder": "Search"
 }

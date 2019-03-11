@@ -2,8 +2,8 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
 import Frame from 'components/Frame'
-import { TranslationContext } from 'hooks/translation'
-import { appWithTranslation, withNamespaces} from 'i18n'
+import { TranslationContext } from 'translation/hook'
+import { appWithTranslation, withNamespaces} from 'translation/i18n'
 
 const InjectTranslation = withNamespaces('common')(({t, children}) => (<TranslationContext.Provider value={t}>{children}</TranslationContext.Provider>))
 

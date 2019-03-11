@@ -1,7 +1,17 @@
-@import "icon";
+@import "size";
 @import "typography";
 @import "space";
 @import "color";
+
+.app_content {
+  display: flex;
+  padding-top: @space_unit * 5;
+}
+
+.main {
+  .main_size();
+  padding-left: @space_unit * 15;
+}
 
 .link {
   outline: 0;
@@ -13,9 +23,31 @@
   color: @text;
 }
 
+.side_bar {
+  .side_bar_size();
+  padding-left: @space_unit * 2;
+  padding-right: @space_unit * 2;
+}
+
+.side_bar_search {
+  width: @side_bar_width - (@space_unit * 2);
+}
+
+.topicItem {
+  .headline6();
+  margin-top: @space_unit * 4;
+  margin-bottom: @space_unit;
+  margin-left: @space_unit;
+}
+
+.articleItem {
+  .plain();
+  .link();
+  margin-left: @space_unit * 2;
+  color: gray;
+}
+
 .top_nav {
-  padding-left: @space_unit * 4;
-  padding-right: @space_unit * 4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,16 +56,14 @@
 .top_nav_item {
   .headline5();
   .link();
-  padding-left: @space_unit * 2;
-  padding-right: @space_unit * 2;
+  padding-right: @space_unit * 4;
   word-break: keep-all;
   color: gray;
   display: flex;
 }
 
 .app_bar {
-  width: 100%;
-  height: 56px;
+  .app_bar_size();
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -52,6 +82,7 @@
 .app_bar_title {
   .headline4();
   display: flex;
+  padding-right: @space_unit * 16;
 }
 
 .no_margin {
