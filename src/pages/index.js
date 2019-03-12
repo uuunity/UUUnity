@@ -1,1 +1,5 @@
-export { default } from './Home'
+const Home = () => {
+  return null
+}
+
+export default Home

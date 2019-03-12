@@ -8,7 +8,7 @@ import { appWithTranslation, withNamespaces} from 'translation/i18n'
 const InjectTranslation = withNamespaces('common')(({t, children}) => (<TranslationContext.Provider value={t}>{children}</TranslationContext.Provider>))
 
 class UuunityApp extends App {
-  static async getInitialProps ({ Component, router, ctx }) {
+  static async getInitialProps ({ Component, router, ctx, query }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {

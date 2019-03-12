@@ -11,7 +11,7 @@ const Frame = (props) => {
       <AppBar />
       <div className={css.app_content}>
         <SideBar />
-        <main className={css.main}>
+        <main className={css.main} role="main">
           {children}
         </main>
       </div>

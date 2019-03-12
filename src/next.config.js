@@ -19,7 +19,8 @@ module.exports = withMDX(withLess({
           styles: path.resolve(__dirname, 'styles/'),
           components: path.resolve(__dirname, 'components/'),
           articles: path.resolve(__dirname, 'articles/'),
-          translation: path.resolve(__dirname, 'translation/')
+          translation: path.resolve(__dirname, 'translation/'),
+          utils: path.resolve(__dirname, 'utils/')
         }
       }
     })

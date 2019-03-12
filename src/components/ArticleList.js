@@ -12,8 +12,9 @@ const ArticleList = () => {
 
       const topicItem = (<h6 className={css.topicItem} key={`tag_${tag.id}`}>{tag[lng]}</h6>)
       const articleItems = Object.values(articles)
+        .map(article => article[lng])
         .filter(articleHasTag)
-        .map(article => (<a className={css.articleItem} key={`${tag.id}_${article.meta.id}`} href={`/p/${article.meta.id}`}>{article.meta.name}</a>))
+        .map(article => (<a className={css.articleItem} key={`${tag.id}_${article.meta.id}`} href={`/p/${article.meta.id}`}>{article.meta.title}</a>))
 
       return array.concat([topicItem, ...articleItems])
     }, [])

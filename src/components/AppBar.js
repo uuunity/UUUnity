@@ -2,6 +2,7 @@ import css from 'styles/basic/components.less'
 import { useTranslation } from 'translation/hook'
 import { GithubAlt } from 'styled-icons/fa-brands/GithubAlt'
 import TopNav from './TopNav'
+import ChooseLng from './ChooseLng'
 
 const AppBar = () => {
   const t = useTranslation()
@@ -13,6 +14,7 @@ const AppBar = () => {
       <h4 className={css.app_bar_title}>{t('app_title')}</h4>
       <TopNav />
       <div className={css.space_grow} />
+      <ChooseLng />
       <a href="https://github.com/uuunity/UUUnity" target="_blank" className={css.icon_link}>
         <GithubAlt className={css.app_bar_icon} />
       </a>

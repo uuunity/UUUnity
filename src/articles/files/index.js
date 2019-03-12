@@ -1,5 +1,5 @@
-import * as example from './example.md'
+import Example from './Example'
 
 export default {
-  example
+  Example
 }
