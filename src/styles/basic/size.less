@@ -1,6 +1,23 @@
 @icon_size_small: 36px;
 @icon_size_medium: 48px;
 @icon_size_large: 56px;
+@app_bar_height: 56px;
+@app_bar_width: 100%;
+@side_bar_width: 180px;
+@main_width: calc(100% - @side_bar_width);
+
+.main_size {
+  width: @main_width;
+}
+
+.app_bar_size {
+  height: @app_bar_height;
+  width: @app_bar_width;
+}
+
+.side_bar_size {
+  width: @side_bar_width;
+}
 
 .icon_small {
   height: @icon_size_small;

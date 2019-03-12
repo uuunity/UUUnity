@@ -1,6 +1,16 @@
 {
-  "app_title": "Uuunity",
+  "app_title": "UUUnity",
   "title_home": "Home",
   "title_article_list": "Articles",
-  "title_about_us": "About us"
+  "title_about_us": "About us",
+  "search_placeholder": "Search",
+  "lng_choose_label": "Choose a language:",
+  "lng_en": "English",
+  "lng_zh-TW": "Traditional Chinese",
+  "lng_zh-CN": "Simplified Chinese",
+  "tag_label": "Tags:",
+  "from_label": "Source from:",
+  "author_label": "Authors:",
+  "created_time_label": "Created time:",
+  "updated_time_label": "Updated time:"
 }

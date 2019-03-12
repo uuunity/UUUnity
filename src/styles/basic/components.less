@@ -1,7 +1,20 @@
-@import "icon";
+@import "size";
 @import "typography";
 @import "space";
 @import "color";
+
+.app_content {
+  display: flex;
+  padding-top: @space_unit * 5;
+  padding-bottom: @space_unit * 5;
+}
+
+.main {
+  .main_size();
+  padding-left: @space_unit * 15;
+  padding-right: @space_unit * 15;
+  padding-bottom: @space_unit * 2;
+}
 
 .link {
   outline: 0;
@@ -13,9 +26,31 @@
   color: @text;
 }
 
+.side_bar {
+  .side_bar_size();
+  padding-left: @space_unit * 2;
+  padding-right: @space_unit * 2;
+}
+
+.side_bar_search {
+  width: @side_bar_width - (@space_unit * 2);
+}
+
+.topicItem {
+  .headline6();
+  margin-top: @space_unit * 4;
+  margin-bottom: @space_unit;
+  margin-left: @space_unit;
+}
+
+.articleItem {
+  .plain();
+  .link();
+  margin-left: @space_unit * 2;
+  color: gray;
+}
+
 .top_nav {
-  padding-left: @space_unit * 4;
-  padding-right: @space_unit * 4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,16 +59,14 @@
 .top_nav_item {
   .headline5();
   .link();
-  padding-left: @space_unit * 2;
-  padding-right: @space_unit * 2;
+  padding-right: @space_unit * 4;
   word-break: keep-all;
   color: gray;
   display: flex;
 }
 
 .app_bar {
-  width: 100%;
-  height: 56px;
+  .app_bar_size();
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -52,8 +85,90 @@
 .app_bar_title {
   .headline4();
   display: flex;
+  padding-right: @space_unit * 4;
 }
 
 .no_margin {
+  margin: 0 auto;
+}
+
+.from, .authors, .from, .times, .tags {
+  .plain();
+  display: flex;
+  align-items: center;
+  margin-top: @space_unit * 2;
+}
+
+.time {
+  display: flex;
+  padding-right: @space_unit * 2;
+}
+
+.tag {
+  display: flex;
+  background: gray;
+  color: white;
+  border-radius: 4px;
+  margin-right: @space_unit;
+  margin-left: @space_unit;
+  padding: @space_unit;
+  font-size: 1.2rem;
+}
+
+.from_link, .author_link {
+  .link();
+  color: blue;
+}
+
+.content {
+  font-family: @standard_family;
+  border-bottom: thin solid gray;
+  padding-bottom: @space_unit * 4;
+}
+
+.content h1 {
+  .headline1();
+}
+
+.content h2 {
+  .headline2();
+}
+
+.content h3 {
+  .headline3();
+}
+
+.content h4 {
+  .headline4();
+}
+
+.content h5 {
+  .headline5();
+}
+
+.content h6 {
+  .headline6();
+}
+
+.content p {
+  .plain();
+}
+
+.content a {
+  color: blue;
+}
+
+.content table, li {
+  font-size: 1.2rem;
+}
+
+.content tr {
+  box-shadow: 0px 1px gray;
+}
+
+.content blockquote {
+  color: gray;
+  border-left: 4px solid gray;
+  padding: 0px 16px 0px 16px;
   margin: 0 auto;
 }

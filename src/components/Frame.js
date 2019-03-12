@@ -1,33 +1,34 @@
-import { Fragment } from 'react'
+import { createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 import css from 'styles/basic/components.less'
-import { useTranslation } from 'hooks/translation'
-import { GithubAlt } from 'styled-icons/fa-brands/GithubAlt'
-import TopNav from './TopNav'
+import AppBar from './AppBar'
+import SideBar from './SideBar'
+
+const TitleContext = createContext('')
+export const useTitle = () => useContext(TitleContext)
 
 const Frame = (props) => {
-  const t = useTranslation()
-  const { children } = props
+  const { title, children } = props
   return (
-    <Fragment>
-      <div className={css.app_bar}>
-        <a href="/" className={css.icon_link}>
-          <img src="/static/images/logo.png" className={css.app_bar_icon} />
-        </a>
-        <h4 className={css.app_bar_title}>{t('app_title')}</h4>
-        <TopNav />
-        <div className={css.space_grow} />
-        <a href="https://github.com/goro19980502/UUUnity" target="_blank" className={css.icon_link}>
-          <GithubAlt className={css.app_bar_icon} />
-        </a>
+    <TitleContext.Provider value={title}>
+      <AppBar />
+      <div className={css.app_content}>
+        <SideBar />
+        <main className={css.main} role="main">
+          {children}
+        </main>
       </div>
-      {children}
-    </Fragment>
+    </TitleContext.Provider>
   )
 }
 
 Frame.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string
+}
+
+Frame.defaultProps = {
+  title: ''
 }
 
 export default Frame
