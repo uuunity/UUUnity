@@ -4,8 +4,13 @@
   "title_article_list": "文章列表",
   "title_about_us": "关于我们",
   "search_placeholder": "搜寻",
-  "lng_choose_label": "选择语言",
+  "lng_choose_label": "选择语言：",
   "lng_en": "英文",
   "lng_zh-TW": "繁体中文(台湾)",
-  "lng_zh-CN": "简体中文"
+  "lng_zh-CN": "简体中文",
+  "tag_label": "标签：",
+  "from_label": "转载自：",
+  "author_label": "作者：",
+  "created_time_label": "创建时间：",
+  "updated_time_label": "更新时间："
 }

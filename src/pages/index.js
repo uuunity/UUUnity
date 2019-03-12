@@ -1,5 +1,7 @@
+import Frame from 'components/Frame'
+
 const Home = () => {
-  return null
+  return (<Frame />)
 }
 
 export default Home

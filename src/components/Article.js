@@ -1,11 +1,15 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import css from 'styles/basic/components.less'
 import moment from 'moment'
 import SEO, { ArticleJsonLd } from 'next-seo'
 import { i18n } from 'translation/i18n'
+import { useTranslation } from 'translation/hook'
+import MDXCode from 'components/MDXCode'
 import pkg from '../../package.json'
 
 const Article = (props) => {
+  const t = useTranslation()
   const { article } = props
   const { default: Content, meta } = article
   const url = `${pkg.homepage}/p/${meta.id}`
@@ -57,7 +61,31 @@ const Article = (props) => {
       <SEO config={seo} />
       <article>
         <ArticleJsonLd {...jsonLd} />
-        <Content />
+        <section className={css.content}>
+          <Content components={{ code: MDXCode }} />
+        </section>
+        <section className={css.authors}>
+          {t('author_label')}
+          {meta.authors.map(author => (<a key={author.name} href={author.website} className={css.author_link}>{author.name}</a>))}
+        </section>
+        <section className={css.times}>
+          <section className={css.time}>
+            {t('created_time_label')}
+            {moment(meta.createdTime).format('YYYY/MM/DD')}
+          </section>
+          <section className={css.time}>
+            {t('updated_time_label')}
+            {moment(meta.updatedTime).format('YYYY/MM/DD')}
+          </section>
+        </section>
+        <section className={css.from}>
+          {t('from_label')}
+          <a href={meta.from} className={css.from_link}>{meta.from}</a>
+        </section>
+        <section className={css.tags}>
+          {t('tag_label')}
+          {meta.tags.map(tag => (<span key={tag.id} className={css.tag}>{tag[lng]}</span>))}
+        </section>
       </article>
     </Fragment>
   )

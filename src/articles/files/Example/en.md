@@ -1,5 +1,3 @@
-import MDXImage from 'components/MDXImage'
-import moment from 'moment'
 import tags from 'articles/tags'
 
 export const meta = {
@@ -22,8 +20,47 @@ export const meta = {
 
 ## Do you know that you could use javascript to write unity script?
 
+### Head3
+
+#### Head4
+
+##### Head5
+
+###### Head6
+
+[This is a link](#)
+
+|Head1|Head2|
+|:---:|:---:|
+|body1|body2|
+
 Hello uuunity.
+
+**word**
+*word*
+~~word~~
+
+---
 
 There is our logo below.
 
-<MDXImage folderName="Example" fileName="Logo.png" alt="logo" />
+![logo](/static/article-images/Example/Logo.png)
+
+> This is quote
+
+> more...
+
+- list1
+- list2
+- list3
+
+1. list1
+2. list2
+3. list3
+
+```js=2
+const foo = 1
+const bar = 2
+
+asset(foo + bar, 3)
+```

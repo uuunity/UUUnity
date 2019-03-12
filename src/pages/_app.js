@@ -1,7 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
-import Frame from 'components/Frame'
 import { TranslationContext } from 'translation/hook'
 import { appWithTranslation, withNamespaces} from 'translation/i18n'
 
@@ -24,13 +23,11 @@ class UuunityApp extends App {
     return (
       <Container>
         <Head>
-          <title>Wow Uuunity</title>
+          <title>Uuunity</title>
           <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         </Head>
         <InjectTranslation>
-          <Frame>
-            <Component {...pageProps} />
-          </Frame>
+          <Component {...pageProps} />
         </InjectTranslation>
       </Container>
     )
