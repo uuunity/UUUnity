@@ -23,7 +23,6 @@ const ArticleList = () => {
 
   return (
     <div className={css.article_list}>
-      <input className={css.article_list_search} autoComplete="off" placeholder={t('search_placeholder')} />
       {topicItems}
     </div>
   )
