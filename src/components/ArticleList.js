@@ -2,10 +2,12 @@ import css from 'styles/basic/components.less'
 import articles from 'articles/files'
 import tags from 'articles/tags'
 import { i18n } from 'translation/i18n'
+import { useTranslation } from 'translation/hook'
 
 const ArticleList = () => {
+  const t = useTranslation()
   const lng = i18n.language
-  return Object.values(tags)
+  const topicItems = Object.values(tags)
     .reduce((array, tag) => {
       const articleTagIsTag = articleTag => articleTag.id === tag.id
       const articleHasTag = article => article.meta.tags.find(articleTagIsTag) !== undefined
@@ -18,6 +20,13 @@ const ArticleList = () => {
 
       return array.concat([topicItem, ...articleItems])
     }, [])
+
+  return (
+    <div className={css.article_list}>
+      <input className={css.article_list_search} autoComplete="off" placeholder={t('search_placeholder')} />
+      {topicItems}
+    </div>
+  )
 }
 
 export default ArticleList

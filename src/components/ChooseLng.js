@@ -9,7 +9,7 @@ const ChooseLng = () => {
   const language = i18n.language
   return (
     <Fragment>
-      <label htmlFor="lng">{t('lng_choose_label')}</label>
+      <label className={css.lng_choose_label} htmlFor="lng">{t('lng_choose_label')}</label>
       <select id="lng" value={language} onChange={(event) => i18n.changeLanguage(event.target.value)}>
         {allLngs.map(lng => (<option key={lng} value={lng}>{t(`lng_${lng}`)}</option>))}
       </select>

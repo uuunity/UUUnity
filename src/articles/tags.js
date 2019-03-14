@@ -1,15 +1,15 @@
 const tags = {
-  example: {
-    id: 'example',
+  Example: {
+    id: 'Example',
     'zh-TW': '範例',
     'zh-CN': '范例',
-    'en': 'example'
+    'en': 'Example'
   },
-  others: {
-    id: 'others',
+  Others: {
+    id: 'Others',
     'zh-TW': '其他',
     'zh-CN': '其他',
-    'en': 'others'
+    'en': 'Others'
   }
 }
 
