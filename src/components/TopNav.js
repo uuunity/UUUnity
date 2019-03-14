@@ -5,7 +5,6 @@ const TopNav = () => {
   const t = useTranslation()
   return (
     <div className={css.top_nav}>
-      <a href="/about" className={css.top_nav_item}>{t('title_about_us')}</a>
     </div>
   )
 }
