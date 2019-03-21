@@ -1,0 +1,20 @@
+import tags from 'articles/tags'
+
+export const meta = {
+  id: '<%= articleId %>',
+  title: '<%= title %>',
+  description: '<%= description %>',
+  tags: [<%= tags.map(tag => `tags.${tag}`).join(', ') %>],
+  from: '<%= from %>',
+  locale: '<%= language %>',
+  authors: [{
+    name: '<%= authorName %>',
+    website: '<%= authorWebsite %>'
+  }],
+  createdTime: new Date('<%= createdTime %>'),
+  updatedTime: new Date('<%= updatedTime %>')
+}
+
+# <%= description %>
+
+Start your article from here.

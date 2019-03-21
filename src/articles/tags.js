@@ -13,4 +13,4 @@ const tags = {
   }
 }
 
-export default Object.freeze(tags)
+module.exports = Object.freeze(tags)
