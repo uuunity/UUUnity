@@ -18,7 +18,8 @@ inquirer.registerPrompt('datetime', datepicker)
 
 inquirer
   .prompt([
-    { type: 'input',
+    {
+      type: 'input',
       name: 'articleId',
       message: messages[locale].articleId,
       validate(input) {
@@ -27,6 +28,7 @@ inquirer
           const matchArr = input.match(/[A-Z][a-zA-Z0-9]+/)
           if (!matchArr) return resolve(messages[locale].articleIdCamelCaseRule)
           if (matchArr[0] !== input) return resolve(messages[locale].articleIdCamelCaseRule)
+          if (!fs.existsSync(path.resolve(`./src/articles/files/${input}`))) return resolve(messages[locale].articleIdNotFound)
           return resolve(true)
         })
       }
@@ -78,7 +80,7 @@ inquirer
   ])
   .then(answers => {
     const info = Object.assign({}, answers, { createdTime: moment(answers.createdTime).format('YYYY/MM/DD'), updatedTime: moment(answers.updatedTime).format('YYYY/MM/DD'), language: locale })
-    const templatePath = path.resolve('./src/utils/template')
+    const templatePath = path.resolve('./src/utils/article.template')
     const templateString = fs.readFileSync(templatePath, 'utf8')
     fs.writeFileSync(`./src/articles/files/${answers.articleId}/${locale.replace('-', '')}.md`, template(templateString)(info))
   })

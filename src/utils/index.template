@@ -1,0 +1,12 @@
+import createLocaleIndex from 'utils/create-locale-index'
+<%=
+  files.map(file => `import * as ${file} from './${file}.md'`).join('\r\n')
+%>
+
+export default createLocaleIndex(
+  <%= defaultFile %>,
+  <%=
+    pairs.map(pair => `{ '${pair.key}': ${pair.value} },`).join('\r\n\t')
+  %>
+)
+

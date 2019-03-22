@@ -55,13 +55,19 @@
 
 language: You can write your prefer language, and system will show asks with that language. ex: `en`, `zh-TW`, `zh-CN` The default language is `zh-TW`.
 
-ex: `yarn gen: article en`
+ex: `yarn gen:article en`
+
+By the way, the language of article must be the language you choose.
 
 6. The script will ask you some question and product a new file. Wrtie some words in the file and save it.
 
 7. Create a `index.js` in the folder. Answer the question the script asks.
 
-`$ yarn gen:index`
+`$ yarn gen:index [language]`
+
+language: You can write your prefer language, and system will show asks with that language. ex: `en`, `zh-TW`, `zh-CN` The default language is `zh-TW`.
+
+ex: `yarn gen:index en`
 
 8. Go back to the article folder.
 
