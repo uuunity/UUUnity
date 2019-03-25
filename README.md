@@ -69,14 +69,6 @@ language: You can write your prefer language, and system will show asks with tha
 
 ex: `yarn gen:index en`
 
-8. Go back to the article folder.
-
-`cd UUUnity/src/articles/file`
-
-9. Test your article.
-
-`$ yarn test:articles`
-
 ### TODO list
 - to write the program to auto generating sitemap.xml
 - to add GA tag
