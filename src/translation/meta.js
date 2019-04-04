@@ -1,2 +1,7 @@
-export const defaultLng = 'zh-TW'
-export const allLngs = Object.freeze(['zh-TW', 'zh-CN', 'en'])
+const defaultLng = 'zh-TW'
+const allLngs = Object.freeze(['zh-TW', 'zh-CN', 'en'])
+
+module.exports = {
+  defaultLng,
+  allLngs
+}

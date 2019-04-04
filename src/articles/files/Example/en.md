@@ -4,7 +4,7 @@ export const meta = {
   id: 'Example',
   title: 'Example article',
   description: 'The example article for uuunity',
-  tags: [tags.example, tags.others],
+  tags: [tags.Example, tags.Others],
   from: 'https://uuunity-website.herokuapp.com/',
   locale: 'en',
   authors: [{

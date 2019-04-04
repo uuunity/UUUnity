@@ -4,7 +4,7 @@ export const meta = {
   id: 'Example',
   title: '範例文章',
   description: '這是一個用來當作 UUUnity 的範例文章',
-  tags: [tags.example, tags.others],
+  tags: [tags.Example, tags.Others],
   from: 'https://uuunity-website.herokuapp.com/',
   locale: 'zh-TW',
   authors: [{

@@ -8,13 +8,14 @@ const TitleContext = createContext('')
 export const useTitle = () => useContext(TitleContext)
 
 const Frame = (props) => {
-  const { title, children } = props
+  const { title, hideSideBar, children } = props
+  const cssMain = hideSideBar ? css.main_no_side_bar : css.main
   return (
     <TitleContext.Provider value={title}>
       <AppBar />
       <div className={css.app_content}>
-        <SideBar />
-        <main className={css.main} role="main">
+        {!hideSideBar && (<SideBar />)}
+        <main className={cssMain} role="main">
           {children}
         </main>
       </div>
@@ -24,11 +25,13 @@ const Frame = (props) => {
 
 Frame.propTypes = {
   children: PropTypes.element.isRequired,
-  title: PropTypes.string
+  title: PropTypes.string,
+  hideSideBar: PropTypes.bool
 }
 
 Frame.defaultProps = {
-  title: ''
+  title: '',
+  hideSideBar: false
 }
 
 export default Frame
