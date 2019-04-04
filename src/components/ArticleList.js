@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDebounce } from 'react-use'
 import css from 'styles/basic/components.less'
 import articles from 'articles/files'
 import tags from 'articles/tags'
@@ -7,10 +8,12 @@ import { useTranslation } from 'translation/hook'
 
 const ArticleList = () => {
   const [search, setSearch] = useState('')
+  const [debouncedSearch, setDebouncedSearch] = useState('')
+  useDebounce(() => setDebouncedSearch(search), 300, [search])
   const t = useTranslation()
   const lng = i18n.language
   const topicItems = Object.values(tags)
-    .filter(tag => search === '' || tag[lng].toLowerCase().indexOf(search) >= 0)
+    .filter(tag => search === '' || tag[lng].toLowerCase().indexOf(debouncedSearch) >= 0)
     .reduce((array, tag) => {
       const articleTagIsTag = articleTag => articleTag.id === tag.id
       const articleHasTag = article => article.meta.tags.find(articleTagIsTag) !== undefined
