@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import css from 'styles/basic/components.less'
 import articles from 'articles/files'
 import tags from 'articles/tags'
@@ -5,9 +6,11 @@ import { i18n } from 'translation/i18n'
 import { useTranslation } from 'translation/hook'
 
 const ArticleList = () => {
+  const [search, setSearch] = useState('')
   const t = useTranslation()
   const lng = i18n.language
   const topicItems = Object.values(tags)
+    .filter(tag => search === '' || tag[lng].toLowerCase().indexOf(search) >= 0)
     .reduce((array, tag) => {
       const articleTagIsTag = articleTag => articleTag.id === tag.id
       const articleHasTag = article => article.meta.tags.find(articleTagIsTag) !== undefined
@@ -23,6 +26,7 @@ const ArticleList = () => {
 
   return (
     <div className={css.article_list}>
+      <input className={css.article_list_search} autoComplete="off" placeholder={t('search_placeholder')} onChange={(e) => setSearch(e.target.value.toLowerCase())} />
       {topicItems}
     </div>
   )
